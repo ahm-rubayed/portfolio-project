@@ -1,0 +1,571 @@
+/* Resetting the default falue */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --brown-color: #d5c455;
+  --off-white: #f8f8f8;
+  --grey:#7f8c8d;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  background: var(--off-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Playfair Display", serif;
+  margin: 0 0 1rem;
+}
+
+p,
+i {
+  margin: 0 0 0.3rem 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 3rem 0 2rem 0;
+}
+
+/* Navbar */
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #111;
+  color: #fff;
+  align-items: center;
+  height: 3.5rem;
+  padding: 0 2rem;
+  width: 100%;
+  position: sticky;
+  z-index: 111;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: "Playfair Display", serif;
+}
+
+.menu {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: auto;
+  background-color: #111;
+  right: 0;
+  top: 3rem;
+  padding:1rem 2rem;
+}
+
+.menu li a {
+  color: #fff;
+  transition: .4s linear;
+}
+
+.menu li a:hover {
+  color: var(--brown-color);
+}
+
+#chk {
+  display: none;
+}
+
+.show-menu-btn,
+.hide-menu-btn {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+/* 
+.hide-menu-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+} */
+
+#chk:checked ~ .menu {
+  display: block;
+}
+
+/*---- Home ---- */
+
+#home {
+  text-align: center;
+  padding: 2rem 0 0 0;
+}
+
+.home .row h1 {
+  font-size: 1.6rem;
+}
+
+.home .row{
+  width: 80%;
+  margin: auto;
+}
+
+.home .row p {
+  color: var(--brown-color);
+  font-size: .92rem;
+  text-transform: capitalize;
+}
+
+.home .row .btn {
+  width: 90%;
+  margin: 0.5rem auto;
+  box-shadow: 0 0 4px #000000b6;
+}
+
+.home .row span {
+  margin-left: 0.3rem;
+}
+
+.hire-btn {
+  background: #fff;
+  color: #111;
+}
+
+.home .row img{
+  width: 100%;
+  height: auto;
+}
+/*--- About Us start from here ---*/
+.counter {
+  background-color: #fff;
+  text-align: center;
+  padding: 3.5rem 0;
+  margin: 1rem 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.counter span {
+  font-size: 2rem;
+  color: var(--brown-color);
+  font-weight: bold;
+}
+
+.counter p {
+  font-size: 0.8rem;
+}
+
+.about-header {
+  margin-top: 2.5rem;
+}
+
+.about-title {
+  color: var(--brown-color);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  font-family: "Playfair Display", serif;
+}
+
+.about-header p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.about-item {
+  margin: 2rem 0 0 0;
+}
+
+.about-item ul li {
+  display: flex;
+  padding-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.about-item ul li span:nth-child(1) {
+  flex-basis: 25%;
+}
+
+.about-item ul li span:nth-child(2) {
+  flex-basis: 75%;
+  color: var(--brown-color);
+}
+
+.about .btn {
+  margin-top: 1rem;
+  box-shadow: 0 7px 3px #000000b6;
+}
+
+/*-- Skills --*/
+
+.skills .row {
+  margin: 1rem ;
+}
+
+.skill-name {
+  text-transform: uppercase;
+  margin: 0 0 0.7rem 0;
+  font-size: 0.9rem;
+}
+
+.skill-bar {
+  height: 0.5rem;
+  background: #ecf0f1;
+  border-radius: 3px;
+}
+
+.skill-per {
+  height: 0.5rem;
+  background: var(--brown-color);
+  border-radius: 3px;
+  position: relative;
+  animation: skillbar 1s 1 linear;
+}
+
+.skill-per::before {
+  content: attr(per);
+  position: absolute;
+  background: #fff;
+  padding: 0.1rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  right: 0;
+  top: -2rem;
+  transform: translateX(50%);
+}
+
+.skill-per::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  height: 0.5rem;
+  width: 0.8rem;
+  right: 0.2rem;
+  top: -1rem;
+  transform: translateX(50%) rotate(45deg);
+}
+
+@keyframes skillbar {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/*----- Services Start from here -----*/
+.services {
+  text-align: center;
+}
+
+.services .row {
+  background-color: #fff;
+  padding: 2rem 1rem;
+  margin: .5rem .5rem .5rem 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.services .row:hover{
+  background-color: var(--brown-color);
+  color: #fff;
+}
+
+.services .row i {
+  font-size: 2.5rem;
+}
+
+.services .row p {
+  font-size: .9rem;
+}
+
+/* Pricing Plan */
+.price .row{
+  text-align: center;
+  background: #fff;
+  padding: 2rem 0;
+  margin: .5rem .5rem .5rem 0;
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+
+.price .row span{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--brown-color);
+}
+
+.price .item li{
+  padding: .7rem 0;
+}
+
+.price .item li i{
+  margin-right: .5rem;
+  color: var(--brown-color);
+}
+
+.price .btn{
+  padding: .2rem 3rem;
+  transition: .4s linear;
+  border: 2px solid var(--brown-color);
+
+}
+
+.price .btn:hover{
+  background: #fff;
+  color: #111;
+}
+
+/* ----Experiences start from here -----*/
+.experiences .row{
+  background: #fff;
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.main-icon{
+  position: absolute;
+  font-size: 1.3rem;
+  top: -1.3rem;
+  background: var(--brown-color);
+  padding: .5rem;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.experiences .row span{
+  color: var(--brown-color);
+  font-size: .9rem;
+}
+
+.experiences .row small i{
+  color: var(--brown-color);
+  margin: 0 .3rem 1rem 0;
+}
+
+.experiences .row p{
+  color: var(--grey);
+  font-size: .9rem;
+}
+
+/*-- Works Start From here --*/
+.works .container{
+  width: 85%;
+}
+
+.works .row{
+  margin: 1rem 0;
+  position: relative;
+}
+
+.works .row img{
+  height: 20rem;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.overlay{
+  position: absolute;
+  height: 0;
+  width: 100%;
+  background:rgba(213, 196, 85, 0.9) ;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 5px;
+  transition: .5s ease;
+}
+
+.works .row:hover .overlay{
+  height: 100%;
+}
+
+.text{
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-40%,-50%);
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.text h4{
+  margin: 0 0 .4rem 0;
+}
+
+/* Pagination */
+.pagination{
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pagination a{
+  border: 1px solid rgb(219, 216, 216);
+  padding: .4rem .7rem;
+  color: rgb(2, 2, 2);
+  font-weight: 500;
+  transition: .4s ease;
+  border-radius: 5px;
+  font-size: .8rem;
+}
+
+.pagination a:nth-child(2){
+  background-color: var(--brown-color);
+  color: #fff;
+}
+
+.pagination a:hover{
+  background: var(--brown-color);
+  color: #fff;
+}
+
+/*-- Blog start from here --*/
+.blog .col img{
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+  display: block;
+}
+
+.blog .col{
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.blog-content{
+  background-color: #fff;
+  display: block;
+  border-radius: 0 0 5px 5px;
+  padding: 1rem;
+}
+
+.blog-content ul li{
+  display: inline-block;
+  margin: 0 .5rem;
+  text-transform: uppercase;
+  font-size: .7rem;
+  margin: 0 0 1rem 0;
+}
+
+.blog-content ul li:nth-child(3){
+  color: var(--brown-color);
+}
+
+.blog-content p{
+  font-size: .9rem;
+  color: var(--grey);
+}
+
+/* Contact Us start from here */
+.contact .container{
+  width: 85%;
+}
+
+.contact .row:nth-child(1){
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.contact .row h3{
+  font-size: 1.5rem;
+  margin: 0 0 .5rem 0;
+}
+
+.contact .row p{
+  color: var(--grey);
+  font-size: .9rem;
+}
+
+.contact ul li{
+  margin: 1rem 0;
+  font-size: .8rem;
+}
+
+.contact ul li span{
+  display: block;
+}
+
+.contact ul li span:nth-child(1){
+  font-weight: 600;
+  margin-bottom: .3rem;
+  text-transform: uppercase;
+}
+
+.form input,
+textarea{
+  outline:none;
+  border: none;
+  border-bottom: 1px solid #bdc3c7;
+  padding: .5rem;
+  display: block;
+  width: 100%;
+  font-size: .8rem;
+}
+
+.form input::placeholder,
+.form textarea::placeholder{
+  font-family: "Playfair Display", serif;
+}
+
+.social-contact{
+  margin-top: 4rem;
+}
+
+.social-contact h4{
+  margin: 0;
+}
+
+.social-contact ul li{
+  display: inline-block;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .2s linear;
+}
+
+.social-contact ul li a{
+  color: #111;
+  font-weight: 600;
+  margin-right: .5rem;
+}
+
+.social-contact ul li:hover{
+  transform: translateY(-.3rem);
+}
+
+iframe{
+  width: 100%;
+  height: 15rem;
+}
+/*--- Footer ---*/
+footer {
+  background: var(--off-white);
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 2rem 0 1.5rem 0;
+}
+
+footer span{
+  color: var(--brown-color);
+  font-family: "Playfair Display", serif;
+}

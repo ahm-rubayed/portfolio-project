@@ -1,0 +1,43 @@
+.container {
+  max-width: 90%;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  background: var(--brown-color);
+  padding: 0.2rem 1rem;
+  border-radius: 0.3rem;
+  margin: 0.5rem 0;
+}
+
+.sm-title {
+  text-align: center;
+  color: var(--brown-color);
+  display: block;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.title {
+  text-align: center;
+  margin: 0 0 4rem 0;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.title::after {
+  content: "";
+  height: 0.3rem;
+  width: 20%;
+  background: var(--brown-color);
+  position: absolute;
+  left: 40%;
+  bottom: -33%;
+}
+
+/* color */
+.grey{
+  color: #7f8c8d;
+}
