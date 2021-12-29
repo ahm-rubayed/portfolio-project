@@ -38,7 +38,7 @@
   /* Service */
   .services .row,
   .price .row {
-    flex-basis: 48%;
+    flex-basis: 47%;
   }
 
   /* Experiences */
@@ -60,6 +60,64 @@
 }
 
 @media screen and (min-width: 768px) {
+  #navbar {
+    background: none;
+    height: 0;
+    padding: 2rem 6rem;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    color: #111;
+    font-weight: 700;
+  }
+
+  .menu li a::after {
+    content: "";
+    position: absolute;
+    height: 15%;
+    width: 0;
+    margin: auto;
+    background: var(--brown-color);
+    bottom: -0.5rem;
+    left: 0;
+    transform-origin: left;
+    border-radius: 5px;
+    transition: 0.4s linear;
+  }
+
+  .menu li a:hover::after {
+    width: 100%;
+  }
+
+  .menu {
+    background: rgba(0, 0, 0, 0.6);
+    width: 20%;
+    height: 100vh;
+    color: #111;
+    right: -100%;
+    top: 0;
+    padding: 8rem 2rem;
+  }
+
+  #chk:checked ~ .menu {
+    right: 0%;
+  }
+
+  .menu li a {
+    text-align: center;
+    display: block;
+    margin: 1.5rem 0;
+  }
+
+  .show-menu-btn {
+    color: #111;
+  }
+
+  .hide-menu-btn {
+    right: 6rem;
+  }
+
   /* Home */
   .home .flex {
     display: flex;
@@ -79,7 +137,7 @@
     font-size: 3rem;
   }
 
-  .home .row h1 span{
+  .home .row h1 span {
     display: block;
   }
 
@@ -122,23 +180,14 @@
     grid-gap: 1rem;
   }
 
-  .menu {
-    background: none;
-    top: 0;
-    width: 60%;
-    display: flex;
-    justify-content: space-evenly;
-    margin: auto;
-    padding: 1rem 0;
-  }
-  
-  .show-menu-btn,
-  .hide-menu-btn {
-    display: none;
+  .home .row:nth-child(1) {
+    padding: 0 6rem;
   }
 
   .home .row .btn {
     width: 50%;
+    display: inline;
+    margin: 0 0.5rem 0 0;
   }
 
   .home .row img {
@@ -157,7 +206,7 @@
 
   .services .row,
   .price .row {
-    flex-basis: 24%;
+    flex-basis: 23%;
   }
 
   /* Experiences */
@@ -183,22 +232,25 @@
     width: 80%;
   }
 
-  .contact .row:nth-child(1){
+  .contact .row:nth-child(1) {
     flex-basis: 50%;
   }
 
-  .contact .row:nth-child(2){
+  .contact .row:nth-child(2) {
     flex-basis: 40%;
   }
 
-  iframe{
+  iframe {
     height: 37rem;
   }
 }
 
-@media screen and (min-width:1200px){
-
-  .container{
+@media screen and (min-width: 1200px) {
+  .container {
     width: 80%;
-  } 
+  }
+
+  .menu {
+    width: 15%;
+  }
 }
